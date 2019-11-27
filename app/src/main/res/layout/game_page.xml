@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/definition"
+        android:layout_width="639dp"
+        android:layout_height="393dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="Definition"
+        android:textSize="36pt" />
+
+    <TextView
+        android:id="@+id/currentScore"
+        android:layout_width="1500px"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="1100px"
+        android:layout_marginEnd="132dp"
+        android:layout_marginRight="132dp"
+        android:gravity="center"
+        android:text="Score: "
+        android:textSize="36pt" />
+
+    <Button
+        android:id="@+id/0"
+        android:layout_width="1200px"
+        android:layout_height="300px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="475px"
+        android:textSize="24pt"
+        android:layout_marginBottom="841dp"
+        android:text="Word2" />
+
+    <Button
+        android:id="@+id/1"
+        android:layout_width="1200px"
+        android:layout_height="300px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="475px"
+        android:textSize="24pt"
+        android:layout_marginBottom="603dp"
+        android:text="Word3" />
+
+    <Button
+        android:id="@+id/2"
+        android:layout_width="1200px"
+        android:layout_height="300px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="475px"
+        android:textSize="24pt"
+        android:layout_marginBottom="377dp"
+        android:text="Word4" />
+
+    <Button
+        android:id="@+id/3"
+        android:layout_width="1200px"
+        android:layout_height="300px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="475px"
+        android:layout_marginBottom="1043dp"
+        android:text="Word1"
+        android:textSize="24pt" />
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="2200px"
+        android:layout_height="300px"
+        android:layout_alignParentBottom="true"
+        android:textSize="24pt"
+        android:text="Exit" />
+
+</RelativeLayout>

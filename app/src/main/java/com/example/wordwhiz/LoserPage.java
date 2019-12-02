@@ -19,9 +19,11 @@ public class LoserPage extends AppCompatActivity {
     }
     public void goToGame() {
         Intent intent = new Intent(this, GamePage.class);
+        startActivity(intent);
 
     }
     public void goToHome() {
         Intent intent = new Intent(this, HomePage.class);
+        startActivity(intent);
     }
 }

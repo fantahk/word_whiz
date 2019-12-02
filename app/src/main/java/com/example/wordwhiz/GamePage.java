@@ -86,7 +86,7 @@ public class GamePage extends AppCompatActivity {
     public void newRound() {
         // random word variable = API request for random word
         correctAnswer.setText("Correct Word"); // sets text of correct button to random word variable
-        definition.setText("Definition: " + score);// set definition to API definition for random word variable
+        definition.setText("Definition: a written or printed work consisting of pages glued or sewn together along one side and bound in covers.");// set definition to API definition for random word variable
     }
     public void correctAnswerClicked() {
         // change button color to green later

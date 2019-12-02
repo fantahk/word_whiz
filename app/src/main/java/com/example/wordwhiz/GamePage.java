@@ -1,6 +1,7 @@
 package com.example.wordwhiz;
 
 // import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
@@ -90,7 +91,7 @@ public class GamePage extends AppCompatActivity {
     public void correctAnswerClicked() {
         // change button color to green later
 
-        
+
         // update score
         score++;
         currentScore.setText("Score: " + score);
@@ -109,7 +110,8 @@ public class GamePage extends AppCompatActivity {
     public void wrongAnswerClicked() {
         for (Button answer : answers) {
             if (answer != correctAnswer) {
-                System.out.println("Wrong choice!");
+                Intent intent = new Intent(this, LoserPage.class);
+                startActivity(intent);
             }
         }
     }

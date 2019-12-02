@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -7,27 +7,45 @@
     <TextView
         android:id="@+id/rules"
         android:layout_width="match_parent"
-        android:layout_height="184dp"
-        android:text="Rules"
-        android:textSize="24sp" />
+        android:layout_height="279dp"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:fontFamily="monospace"
+        android:text="Rules: Choose the word that you think belongs to the given definition and rack up points!"
+        android:textColor="#000000"
+        android:textSize="13pt" />
 
     <TextView
         android:id="@+id/highestScore"
         android:layout_width="match_parent"
-        android:layout_height="184dp"
-        android:text="High Score :"
-        android:textSize="24sp" />
+        android:layout_height="81dp"
+        android:layout_marginTop="220dp"
+        android:gravity="center"
+        android:text="High Score: "
+        android:fontFamily="monospace"
+        android:layout_marginRight="80dp"
+        android:textColor="#000000"
+        android:textSize="18pt" />
 
     <Button
         android:id="@+id/start"
         android:layout_width="match_parent"
         android:layout_height="90dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:fontFamily="monospace"
+        android:textSize="18pt"
+        android:textColor="#000000"
         android:text="START" />
 
     <TextView
         android:id="@+id/wordDefinition"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
-        android:text="WOTD :"
-        android:textSize="24sp" />
-</LinearLayout>
+        android:layout_height="220dp"
+        android:fontFamily="monospace"
+        android:layout_alignParentBottom="true"
+        android:text=" WOTD: "
+        android:textSize="18pt"
+        android:textColor="#000000" />
+</RelativeLayout>

@@ -26,5 +26,6 @@ public class HomePage extends AppCompatActivity {
     }
     public void goToGame() {
         Intent intent = new Intent(this, GamePage.class);
+        startActivity(intent);
     }
 }

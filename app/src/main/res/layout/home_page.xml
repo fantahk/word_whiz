@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/rules"
+        android:layout_width="match_parent"
+        android:layout_height="184dp"
+        android:text="Rules"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/highestScore"
+        android:layout_width="match_parent"
+        android:layout_height="184dp"
+        android:text="High Score :"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:text="START" />
+
+    <TextView
+        android:id="@+id/wordDefinition"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:text="WOTD :"
+        android:textSize="24sp" />
+</LinearLayout>

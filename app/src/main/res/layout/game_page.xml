@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/definition"
+        android:layout_width="800dp"
+        android:layout_height="310dp"
+        android:gravity="center"
+        android:text="a written or printed work consisting of pages glued or sewn together along one side and bound in covers."
+        android:textColor="#000000"
+        android:textSize="20pt" />
+
+    <TextView
+        android:id="@+id/currentScore"
+        android:layout_width="1500px"
+        android:layout_height="300px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-5dp"
+        android:text="Score: "
+        android:textColor="#000000"
+        android:textSize="28pt" />
+
+    <Button
+        android:id="@+id/answer0"
+        android:layout_width="1400dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
+        android:layout_marginBottom="423dp"
+        android:gravity="center"
+        android:text="Word1"
+        android:textSize="24pt" />
+
+    <Button
+        android:id="@+id/answer1"
+        android:layout_width="1400dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
+        android:layout_marginBottom="308dp"
+        android:gravity="center"
+        android:text="Word2"
+        android:textSize="24pt" />
+
+    <Button
+        android:id="@+id/answer2"
+        android:layout_width="1400dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
+        android:layout_marginBottom="197dp"
+        android:gravity="center"
+        android:text="Word3"
+        android:textSize="24pt" />
+
+    <Button
+        android:id="@+id/answer3"
+        android:layout_width="1400dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
+        android:layout_marginBottom="88dp"
+        android:gravity="center"
+        android:text="Word4"
+        android:textSize="24pt" />
+<!--
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="2200px"
+        android:layout_height="275px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-5dp"
+        android:layout_marginRight="200dp"
+        android:text="Exit"
+        android:textSize="24pt" />
+        -->
+
+</RelativeLayout>

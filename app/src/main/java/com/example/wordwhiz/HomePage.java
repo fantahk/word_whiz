@@ -11,8 +11,11 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
 
 /**
  * HomePage is the page that first launches when the app is run. At the top of the screen, the rules are
@@ -32,7 +35,7 @@ public class HomePage extends AppCompatActivity {
         TextView wordOfDay = findViewById(R.id.wordDefinition);
         RequestQueue myRequest = Volley.newRequestQueue(this);
         String url = "https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=7&maxLength=14&api_key=YOURAPIKEY";
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, org.json.JSONObject jsonRequest,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

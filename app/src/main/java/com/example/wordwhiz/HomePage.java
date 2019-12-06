@@ -34,10 +34,13 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
         TextView wordOfDay = findViewById(R.id.wordDefinition);
-        //RequestQueue myRequest = Volley.newRequestQueue(this);
-        //String url = "https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=7&maxLength=14&api_key=YOURAPIKEY";
-        /*
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, org.json.JSONObject jsonRequest,
+
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=7&maxLength=14&api_key=1zm37ehk7ihwitkbl0id0hxydy2s5l9pamrav08k0bji5wjew";
+
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -51,32 +54,8 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-         */
-        String url = "https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=7&maxLength=14&api_key=1zm37ehk7ihwitkbl0id0hxydy2s5l9pamrav08k0bji5wjew";
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        System.out.println(response.toString());
-                        wordOfDay.setText("Response: " + response.toString());
-
-                        try {
-                            String merp = response.get("id").toString();
-                            wordOfDay.setText(merp);
-                        } catch (Exception e) {
-                            System.out.println("oops");
-                        }
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        wordOfDay.setText("Oh no!");
-
-                    }
-                });
+        // Add the request to the RequestQueue.
+        queue.add(stringRequest);
 
         // Access the RequestQueue through your singleton class.
         //MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest);

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/rules"
+        android:layout_width="match_parent"
+        android:layout_height="279dp"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:fontFamily="monospace"
+        android:text="@string/rules_choose_the_word_that_you_think_belongs_to_the_given_definition_and_rack_up_points"
+        android:textColor="#000000"
+        android:textSize="13pt" />
+
+    <TextView
+        android:id="@+id/highestScore"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:layout_marginTop="220dp"
+        android:gravity="center"
+        android:text="@string/high_score"
+        android:fontFamily="monospace"
+        android:layout_marginRight="80dp"
+        android:textColor="#000000"
+        android:textSize="18pt"
+        android:layout_marginEnd="80dp" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:fontFamily="monospace"
+        android:textSize="18pt"
+        android:textColor="#000000"
+        android:text="@string/start" />
+
+    <TextView
+        android:id="@+id/wordDefinition"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:fontFamily="monospace"
+        android:layout_alignParentBottom="true"
+        android:text="@string/wotd"
+        android:textSize="18pt"
+        android:textColor="#000000" />
+</RelativeLayout>

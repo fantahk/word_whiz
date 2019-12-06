@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Word Whiz!</string>
+    <string name="wotd">WOTD:</string>
+    <string name="high_score">High Score:</string>
+    <string name="rules_choose_the_word_that_you_think_belongs_to_the_given_definition_and_rack_up_points">Rules: Choose the word that you think belongs to the given definition and rack up points!</string>
+    <string name="start">START</string>
 </resources>

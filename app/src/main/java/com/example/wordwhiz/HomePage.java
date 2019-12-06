@@ -50,7 +50,7 @@ public class HomePage extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                wordOfDay.setText("That didn't work!");
+                wordOfDay.setText(error.getMessage());
             }
         });
 

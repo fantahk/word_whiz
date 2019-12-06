@@ -44,9 +44,9 @@
         android:id="@+id/wordDefinition"
         android:layout_width="match_parent"
         android:layout_height="220dp"
-        android:fontFamily="monospace"
         android:layout_alignParentBottom="true"
+        android:fontFamily="monospace"
         android:text="@string/wotd"
-        android:textSize="18pt"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="14sp" />
 </RelativeLayout>

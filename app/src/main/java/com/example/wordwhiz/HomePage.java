@@ -34,6 +34,7 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.home_page);
         TextView wordOfDay = findViewById(R.id.wordDefinition);
         RequestQueue myRequest = Volley.newRequestQueue(this);
+        /*
         String url = "https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=7&maxLength=14&api_key=YOURAPIKEY";
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, org.json.JSONObject jsonRequest,
                 new Response.Listener<String>() {
@@ -48,6 +49,7 @@ public class HomePage extends AppCompatActivity {
                 wordOfDay.setText("That didn't work!");
             }
         });
+         */
         Button start = findViewById(R.id.start);
         start.setOnClickListener(unused -> goToGame());
     }

@@ -2,6 +2,7 @@ package com.example.wordwhiz;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -33,7 +34,7 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
         TextView wordOfDay = findViewById(R.id.wordDefinition);
-        RequestQueue myRequest = Volley.newRequestQueue(this);
+        //RequestQueue myRequest = Volley.newRequestQueue(this);
         //String url = "https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=7&maxLength=14&api_key=YOURAPIKEY";
         /*
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, org.json.JSONObject jsonRequest,
@@ -58,7 +59,15 @@ public class HomePage extends AppCompatActivity {
 
                     @Override
                     public void onResponse(JSONObject response) {
+                        System.out.println(response.toString());
                         wordOfDay.setText("Response: " + response.toString());
+
+                        try {
+                            String merp = response.get("id").toString();
+                            wordOfDay.setText(merp);
+                        } catch (Exception e) {
+                            System.out.println("oops");
+                        }
                     }
                 }, new Response.ErrorListener() {
 

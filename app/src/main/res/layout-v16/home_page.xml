@@ -58,5 +58,7 @@
         android:layout_height="240dp"
         android:layout_alignBottom="@+id/wordDefinition"
         android:layout_marginBottom="-239dp"
-        android:text="@string/definition" />
+        android:text="@string/definition"
+        android:textColor="#000000"
+        android:textSize="24sp" />
 </RelativeLayout>

@@ -50,6 +50,7 @@ public class HomePage extends AppCompatActivity {
 
 
 
+
     public void wordAPI() {
         RequestQueue queue1 = Volley.newRequestQueue(this);
         String url1 = "https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1" +

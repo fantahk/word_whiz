@@ -44,7 +44,9 @@ public class HomePage extends AppCompatActivity {
         start.setOnClickListener(unused -> goToGame());
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&api_key=1zm37ehk7ihwitkbl0id0hxydy2s5l9pamrav08k0bji5wjew";
+        String url = "https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1" +
+                "&maxDictionaryCount=1&minLength=7&maxLength=14&limit=50" +
+                "&api_key=1zm37ehk7ihwitkbl0id0hxydy2s5l9pamrav08k0bji5wjew";
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -60,10 +62,11 @@ public class HomePage extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                System.out.println("That didn't work!");
+                wordOfDay.setText(error.getMessage());
             }
         });
         queue.add(jsonArrayRequest);
+        wordOfDay.setText(word);
 
 
     }

@@ -45,7 +45,7 @@ public class HomePage extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
-                        wordOfDay.setText("Response is: "+ response.substring(0,500));
+                        wordOfDay.setText("Response is: "+ response.substring(0,25));
                     }
                 }, new Response.ErrorListener() {
             @Override

@@ -11,9 +11,8 @@
         android:layout_width="800dp"
         android:layout_height="310dp"
         android:layout_marginTop="-70dp"
-        android:gravity="center"
         android:fontFamily="monospace"
-        android:text="Definition: a written or printed work consisting of pages glued or sewn together along one side and bound in covers."
+        android:gravity="center"
         android:textColor="#000000"
         android:textSize="10pt" />
 
@@ -32,38 +31,35 @@
         android:layout_width="1400dp"
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:fontFamily="monospace"
         android:layout_marginLeft="75dp"
         android:layout_marginRight="75dp"
         android:layout_marginBottom="423dp"
+        android:fontFamily="monospace"
         android:gravity="center"
-        android:text="Word1"
         android:textSize="14pt" />
 
     <Button
         android:id="@+id/answer1"
         android:layout_width="1400dp"
         android:layout_height="100dp"
-        android:fontFamily="monospace"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="75dp"
         android:layout_marginRight="75dp"
         android:layout_marginBottom="308dp"
+        android:fontFamily="monospace"
         android:gravity="center"
-        android:text="Word2"
         android:textSize="14pt" />
 
     <Button
         android:id="@+id/answer2"
         android:layout_width="1400dp"
         android:layout_height="100dp"
-        android:fontFamily="monospace"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="75dp"
         android:layout_marginRight="75dp"
         android:layout_marginBottom="197dp"
+        android:fontFamily="monospace"
         android:gravity="center"
-        android:text="Word3"
         android:textSize="14pt" />
 
     <Button
@@ -72,11 +68,10 @@
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="75dp"
-        android:fontFamily="monospace"
         android:layout_marginRight="75dp"
         android:layout_marginBottom="88dp"
+        android:fontFamily="monospace"
         android:gravity="center"
-        android:text="Word4"
         android:textSize="14pt" />
 <!--
     <Button

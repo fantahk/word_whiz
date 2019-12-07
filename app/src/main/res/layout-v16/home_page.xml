@@ -48,5 +48,5 @@
         android:fontFamily="monospace"
         android:text="@string/wotd"
         android:textColor="#000000"
-        android:textSize="14sp" />
+        android:textSize="24sp" />
 </RelativeLayout>

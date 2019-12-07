@@ -54,7 +54,7 @@ public class HomePage extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = response.getJSONObject(0);
                             word = jsonObject.getString("word");
-                            wordOfDay.setText(word);
+                            wordOfDay.setText("Word of The Day: " + word);
                         } catch (JSONException e) {
                             wordOfDay.setText(e.getMessage());
                         }
@@ -66,7 +66,7 @@ public class HomePage extends AppCompatActivity {
             }
         });
         queue.add(jsonArrayRequest);
-        wordOfDay.setText(word);
+        //wordOfDay.setText("Word of The Day: " + word);
 
 
     }

@@ -38,11 +38,11 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
         TextView wordOfDay = findViewById(R.id.wordDefinition);
-        randomWords = randomWordAPI();
-        wordOfDay.setText(randomWords.remove(0));
+        //randomWordAPI();
+        //wordOfDay.setText(randomWords.remove(0));
         Button start = findViewById(R.id.start);
         start.setOnClickListener(unused -> goToGame());
-        /*
+
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&api_key=1zm37ehk7ihwitkbl0id0hxydy2s5l9pamrav08k0bji5wjew";
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
@@ -65,7 +65,7 @@ public class HomePage extends AppCompatActivity {
         });
         queue.add(jsonArrayRequest);
 
-         */
+
     }
     public void goToGame() {
         Intent intent = new Intent(this, GamePage.class);

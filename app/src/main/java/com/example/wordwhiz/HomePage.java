@@ -33,21 +33,21 @@ public class HomePage extends AppCompatActivity {
      */
     private String word;
     private ArrayList<String> randomWords;
+    private String wordDefinition;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
         TextView wordOfDay = findViewById(R.id.wordDefinition);
-        //randomWordAPI();
-        //wordOfDay.setText(randomWords.remove(0));
+        TextView definition = findViewById(R.id.definition);
         Button start = findViewById(R.id.start);
         start.setOnClickListener(unused -> goToGame());
 
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1" +
+        RequestQueue queue1 = Volley.newRequestQueue(this);
+        String url1 = "https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1" +
                 "&maxDictionaryCount=1&minLength=7&maxLength=14&limit=50" +
                 "&api_key=1zm37ehk7ihwitkbl0id0hxydy2s5l9pamrav08k0bji5wjew";
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+        JsonArrayRequest jsonArrayRequest1 = new JsonArrayRequest(Request.Method.GET, url1, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -65,45 +65,39 @@ public class HomePage extends AppCompatActivity {
                 wordOfDay.setText(error.getMessage());
             }
         });
-        queue.add(jsonArrayRequest);
-        //wordOfDay.setText("Word of The Day: " + word);
+        queue1.add(jsonArrayRequest1);
 
-
-    }
-    public void goToGame() {
-        Intent intent = new Intent(this, GamePage.class);
-        startActivity(intent);
-    }
-    public ArrayList<String> randomWordAPI() {
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1" +
-                "&maxDictionaryCount=1&minLength=7&maxLength=14&limit=50" +
-                "&api_key=1zm37ehk7ihwitkbl0id0hxydy2s5l9pamrav08k0bji5wjew";
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+        /*
+        RequestQueue queue2 = Volley.newRequestQueue(this);
+        String url2 = "https://api.wordnik.com/v4/word.json/" + word.toString() + "/definitions?limit=3&includeRelated=false&useCanonical=false&includeTags=false&api_key=1zm37ehk7ihwitkbl0id0hxydy2s5l9pamrav08k0bji5wjew";
+        JsonArrayRequest jsonArrayRequest2 = new JsonArrayRequest(Request.Method.GET, url2, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
                         for (int i = 0; i < response.length(); i++) {
                             try {
-                                System.out.println(response.length());
-                                JSONObject jsonObject = response.getJSONObject(i);
-                                word = jsonObject.getString("word");
-                                randomWords.add(i, word);
+                                JSONObject jsonObject = response.getJSONObject(0);
+                                wordDefinition = jsonObject.getString("text");
+                                definition.setText("Definition: " + wordDefinition);
                             } catch (JSONException e) {
-                                System.out.println("rip");
+                                definition.setText(e.getMessage());
                             }
-                            System.out.println(randomWords);
-                            System.out.println(randomWords.size());
                         }
-                        System.out.println("size: " + randomWords.size());
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                System.out.println("That didn't work!");
+                definition.setText(error.getMessage());
             }
         });
-        queue.add(jsonArrayRequest);
-        return randomWords;
+        queue2.add(jsonArrayRequest2);
+
+
+         */
+
+    }
+    public void goToGame() {
+        Intent intent = new Intent(this, GamePage.class);
+        startActivity(intent);
     }
 }

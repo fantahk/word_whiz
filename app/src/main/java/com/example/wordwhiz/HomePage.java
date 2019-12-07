@@ -45,15 +45,12 @@ public class HomePage extends AppCompatActivity {
         definition = findViewById(R.id.definition);
         start = findViewById(R.id.start);
         start.setOnClickListener(unused -> goToGame());
-        word = wordAPI();
-        definitionAPI();
+        wordAPI();
     }
 
 
 
-
-
-    public String wordAPI() {
+    public void wordAPI() {
         RequestQueue queue1 = Volley.newRequestQueue(this);
         String url1 = "https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1" +
                 "&maxDictionaryCount=1&minLength=7&maxLength=14&limit=50" +
@@ -66,6 +63,7 @@ public class HomePage extends AppCompatActivity {
                             JSONObject jsonObject = response.getJSONObject(0);
                             word = jsonObject.getString("word");
                             wordOfDay.setText("Word of The Day: " + word);
+                            definitionAPI(word);
                         } catch (JSONException e) {
                             wordOfDay.setText(e.getMessage());
                         }
@@ -77,14 +75,14 @@ public class HomePage extends AppCompatActivity {
             }
         });
         queue1.add(jsonArrayRequest1);
-        return word;
+        //return word;
     }
 
 
 
 
 
-    public String definitionAPI() {
+    public String definitionAPI(String word) {
         RequestQueue queue2 = Volley.newRequestQueue(this);
         String url2 = "https://api.wordnik.com/v4/word.json/" + word + "/definitions?limit=3&includeRelated=false&useCanonical=false&includeTags=false&api_key=1zm37ehk7ihwitkbl0id0hxydy2s5l9pamrav08k0bji5wjew";
         JsonArrayRequest jsonArrayRequest2 = new JsonArrayRequest(Request.Method.GET, url2, null,

@@ -34,17 +34,26 @@ public class HomePage extends AppCompatActivity {
     private String word;
     private ArrayList<String> randomWords;
     private String wordDefinition;
+    private TextView wordOfDay;
+    private TextView definition;
+    private Button start;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
-        TextView wordOfDay = findViewById(R.id.wordDefinition);
-        TextView definition = findViewById(R.id.definition);
-        Button start = findViewById(R.id.start);
+        wordOfDay = findViewById(R.id.wordDefinition);
+        definition = findViewById(R.id.definition);
+        start = findViewById(R.id.start);
         start.setOnClickListener(unused -> goToGame());
+        word = wordAPI();
+        definitionAPI();
+    }
 
-        word = "dog";
 
+
+
+
+    public String wordAPI() {
         RequestQueue queue1 = Volley.newRequestQueue(this);
         String url1 = "https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1" +
                 "&maxDictionaryCount=1&minLength=7&maxLength=14&limit=50" +
@@ -68,9 +77,14 @@ public class HomePage extends AppCompatActivity {
             }
         });
         queue1.add(jsonArrayRequest1);
+        return word;
+    }
 
-        System.out.println(word);
 
+
+
+
+    public String definitionAPI() {
         RequestQueue queue2 = Volley.newRequestQueue(this);
         String url2 = "https://api.wordnik.com/v4/word.json/" + word + "/definitions?limit=3&includeRelated=false&useCanonical=false&includeTags=false&api_key=1zm37ehk7ihwitkbl0id0hxydy2s5l9pamrav08k0bji5wjew";
         JsonArrayRequest jsonArrayRequest2 = new JsonArrayRequest(Request.Method.GET, url2, null,
@@ -94,10 +108,12 @@ public class HomePage extends AppCompatActivity {
             }
         });
         queue2.add(jsonArrayRequest2);
-
-
-
+        return wordDefinition;
     }
+
+
+
+
     public void goToGame() {
         Intent intent = new Intent(this, GamePage.class);
         startActivity(intent);

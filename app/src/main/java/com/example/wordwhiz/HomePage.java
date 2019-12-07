@@ -43,6 +43,8 @@ public class HomePage extends AppCompatActivity {
         Button start = findViewById(R.id.start);
         start.setOnClickListener(unused -> goToGame());
 
+        word = "cat";
+
         RequestQueue queue1 = Volley.newRequestQueue(this);
         String url1 = "https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1" +
                 "&maxDictionaryCount=1&minLength=7&maxLength=14&limit=50" +
@@ -67,9 +69,10 @@ public class HomePage extends AppCompatActivity {
         });
         queue1.add(jsonArrayRequest1);
 
-        /*
+        System.out.println(word);
+
         RequestQueue queue2 = Volley.newRequestQueue(this);
-        String url2 = "https://api.wordnik.com/v4/word.json/" + word.toString() + "/definitions?limit=3&includeRelated=false&useCanonical=false&includeTags=false&api_key=1zm37ehk7ihwitkbl0id0hxydy2s5l9pamrav08k0bji5wjew";
+        String url2 = "https://api.wordnik.com/v4/word.json/" + word + "/definitions?limit=3&includeRelated=false&useCanonical=false&includeTags=false&api_key=1zm37ehk7ihwitkbl0id0hxydy2s5l9pamrav08k0bji5wjew";
         JsonArrayRequest jsonArrayRequest2 = new JsonArrayRequest(Request.Method.GET, url2, null,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -93,7 +96,9 @@ public class HomePage extends AppCompatActivity {
         queue2.add(jsonArrayRequest2);
 
 
-         */
+
+
+
 
     }
     public void goToGame() {

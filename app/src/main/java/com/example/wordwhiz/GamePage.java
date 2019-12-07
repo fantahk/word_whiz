@@ -41,12 +41,12 @@ public class GamePage extends AppCompatActivity {
     /**
      * currentScore- TextView that displays score
      */
-    private TextView currentScore;
+    public static TextView currentScore;
 
     /**
      * score- keeps track of score
      */
-    private int score;
+    public static int score;
 
     /**
      * answers - array of all four buttons, will randomly assign correct one.

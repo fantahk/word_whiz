@@ -3,6 +3,7 @@ package com.example.wordwhiz;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,8 @@ public class LoserPage extends AppCompatActivity {
         setContentView(R.layout.loser_page);
         Button tryAgain = findViewById(R.id.tryAgain);
         Button home = findViewById(R.id.home);
+        TextView gameScore = findViewById(R.id.gameScore);
+        gameScore.setText("Final Score : " + GamePage.score);
         tryAgain.setOnClickListener(unused -> goToGame());
         home.setOnClickListener(unused -> goToHome());
     }

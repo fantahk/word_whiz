@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="279dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="-38dp"
+        android:layout_marginTop="-25dp"
         android:fontFamily="monospace"
         android:gravity="center"
         android:text="@string/rules_choose_the_word_that_you_think_belongs_to_the_given_definition_and_rack_up_points"
@@ -44,9 +44,9 @@
     <TextView
         android:id="@+id/wordDefinition"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="73dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="212dp"
+        android:layout_marginBottom="184dp"
         android:fontFamily="monospace"
         android:text="@string/wotd"
         android:textColor="#000000"
@@ -55,8 +55,8 @@
     <TextView
         android:id="@+id/definition"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="240dp"
         android:layout_alignBottom="@+id/wordDefinition"
-        android:layout_marginBottom="-270dp"
+        android:layout_marginBottom="-239dp"
         android:text="@string/definition" />
 </RelativeLayout>

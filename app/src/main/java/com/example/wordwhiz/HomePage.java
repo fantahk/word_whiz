@@ -43,7 +43,7 @@ public class HomePage extends AppCompatActivity {
         Button start = findViewById(R.id.start);
         start.setOnClickListener(unused -> goToGame());
 
-        word = "cat";
+        word = "dog";
 
         RequestQueue queue1 = Volley.newRequestQueue(this);
         String url1 = "https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1" +
@@ -94,9 +94,6 @@ public class HomePage extends AppCompatActivity {
             }
         });
         queue2.add(jsonArrayRequest2);
-
-
-
 
 
 

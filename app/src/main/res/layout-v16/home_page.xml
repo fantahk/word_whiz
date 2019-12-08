@@ -55,10 +55,11 @@
 
     <TextView
         android:id="@+id/definition"
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_width="430dp"
+        android:layout_height="175dp"
         android:layout_alignBottom="@+id/wordDefinition"
-        android:layout_marginBottom="-239dp"
+        android:layout_marginBottom="-171dp"
+        android:background="#525252"
         android:text="@string/definition"
         android:textColor="#FFFFFF"
         android:textSize="24sp" />

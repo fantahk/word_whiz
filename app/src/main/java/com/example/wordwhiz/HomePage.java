@@ -18,7 +18,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
+
 
 /**
  * HomePage is the page that first launches when the app is run. At the top of the screen, the rules are
@@ -31,15 +31,26 @@ public class HomePage extends AppCompatActivity {
      *
      * @param savedInstanceState
      */
+    /**
+     * word - stores the word for the word of the day
+     */
     private String word;
-    private ArrayList<String> randomWords;
+    /**
+     * wordDefinition - stores the definition that corresponds with word
+     */
     private String wordDefinition;
-    private TextView highScoreText;
+    /**
+     * wordOfDay - a text box that displays the word of the day
+     */
     private TextView wordOfDay;
+    /**
+     * definition - a text box that displays the definition corresponding with the word of the day
+     */
     private TextView definition;
+    /**
+     * start - button that takes the user to GamePage
+     */
     private Button start;
-    private int highScore;
-    //private int lastScore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,13 +58,16 @@ public class HomePage extends AppCompatActivity {
         wordOfDay = findViewById(R.id.wordDefinition);
         definition = findViewById(R.id.definition);
         start = findViewById(R.id.start);
-       // highScoreText = findViewById(R.id.highestScore);
         start.setOnClickListener(unused -> goToGame());
         wordAPI();
-        //highScoreText.setText("High Score: " + GamePage.highScore);
-
     }
 
+
+    /**
+     * This function makes an API request and requests an array of words. One word is picked and set
+     * as the word of the day. Then, definitionAPI(word) is called with that word, fetching the definition
+     * corresponding with that word.
+     */
     public void wordAPI() {
         RequestQueue queue1 = Volley.newRequestQueue(this);
         String url1 = "https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1" +
@@ -79,13 +93,17 @@ public class HomePage extends AppCompatActivity {
             }
         });
         queue1.add(jsonArrayRequest1);
-        //return word;
     }
 
 
-
-
-
+    /**
+     *
+     * @param word - the word of the day, passed into this function by wordAPI()
+     * @return the definition corresponding to the word of the day
+     * This function makes an API request, fetching the definition of the word and setting it to the
+     * appropriate text box. Any instances of HTML code from the response is taken out of the string
+     * to include readability of the definition.
+     */
     public String definitionAPI(String word) {
         RequestQueue queue2 = Volley.newRequestQueue(this);
         String url2 = "https://api.wordnik.com/v4/word.json/" + word + "/definitions?limit=3&includeRelated=false&useCanonical=false&includeTags=false&api_key=1zm37ehk7ihwitkbl0id0hxydy2s5l9pamrav08k0bji5wjew";
@@ -123,8 +141,6 @@ public class HomePage extends AppCompatActivity {
         queue2.add(jsonArrayRequest2);
         return wordDefinition;
     }
-
-
 
 
     public void goToGame() {

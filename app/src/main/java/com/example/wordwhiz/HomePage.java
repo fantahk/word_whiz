@@ -38,7 +38,7 @@ public class HomePage extends AppCompatActivity {
     private TextView wordOfDay;
     private TextView definition;
     private Button start;
-    private int highScore = 0;
+    private int highScore;
     private int lastScore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,16 +50,16 @@ public class HomePage extends AppCompatActivity {
         highScoreText = findViewById(R.id.highestScore);
         start.setOnClickListener(unused -> goToGame());
         wordAPI();
-        setHighScore();
+        lastScore = GamePage.score;
+        if (lastScore >= highScore) {
+            setHighScore();
+        }
         highScoreText.setText("High Score: " + String.valueOf(highScore));
 
     }
 
     public void setHighScore() {
-        lastScore = GamePage.score;
-        if (lastScore >= highScore) {
-            highScore = lastScore;
-        }
+        highScore = lastScore;
     }
 
 
@@ -107,6 +107,12 @@ public class HomePage extends AppCompatActivity {
                             try {
                                 JSONObject jsonObject = response.getJSONObject(0);
                                 wordDefinition = jsonObject.getString("text");
+                                /*
+                                if (wordDefinition.contains("<em>")) {
+
+                                }
+
+                                 */
                                 definition.setText("Definition: " + wordDefinition);
                             } catch (JSONException e) {
                                 definition.setText(e.getMessage());

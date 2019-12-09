@@ -2,51 +2,54 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/failRed"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/gameScore"
         android:layout_width="match_parent"
-        android:layout_height="67dp"
+        android:layout_height="150dp"
         android:layout_marginTop="300dp"
         android:text="Final Score: "
         android:layout_marginRight="80dp"
+        android:layout_marginLeft="15dp"
         android:gravity="center"
         android:textColor="#000000"
-        android:fontFamily="monospace"
+        android:fontFamily="sans-serif-condensed-medium"
         android:textSize="18pt" />
 
     <TextView
         android:id="@+id/plainText"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:text="Looks like you're not a word whiz! Try again?"
+        android:text="Looks like you're not a word whiz yet!"
+        android:layout_marginTop="100dp"
         android:gravity="center"
         android:textColor="#000000"
-        android:fontFamily="monospace"
+        android:fontFamily="sans-serif-condensed-medium"
         android:textSize="18pt" />
 
     <Button
         android:id="@+id/tryAgain"
         android:layout_width="match_parent"
         android:layout_height="74dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="500dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:textSize="18pt"
         android:textColor="#000000"
-        android:fontFamily="monospace"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Try Again?" />
 
     <Button
         android:id="@+id/home"
         android:layout_width="match_parent"
         android:layout_height="83dp"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="600dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:textColor="#000000"
-        android:fontFamily="monospace"
+        android:fontFamily="sans-serif-condensed-medium"
         android:textSize="18pt"
         android:text="Home" />
 

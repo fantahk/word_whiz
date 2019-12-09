@@ -10,18 +10,18 @@
         android:id="@+id/definition"
         android:layout_width="800dp"
         android:layout_height="310dp"
-        android:layout_marginTop="-70dp"
-        android:fontFamily="monospace"
+        android:layout_marginTop="-50dp"
+        android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
         android:textColor="#000000"
-        android:textSize="10pt" />
+        android:textSize="8pt" />
 
     <TextView
         android:id="@+id/currentScore"
         android:layout_width="1500px"
         android:layout_height="300px"
         android:layout_alignParentBottom="true"
-        android:fontFamily="monospace"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Score: "
         android:textColor="#000000"
         android:textSize="28pt" />
@@ -34,9 +34,9 @@
         android:layout_marginLeft="75dp"
         android:layout_marginRight="75dp"
         android:layout_marginBottom="423dp"
-        android:fontFamily="monospace"
+        android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
-        android:textSize="14pt" />
+        android:textSize="12pt" />
 
     <Button
         android:id="@+id/answer1"
@@ -46,9 +46,9 @@
         android:layout_marginLeft="75dp"
         android:layout_marginRight="75dp"
         android:layout_marginBottom="308dp"
-        android:fontFamily="monospace"
+        android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
-        android:textSize="14pt" />
+        android:textSize="12pt" />
 
     <Button
         android:id="@+id/answer2"
@@ -58,9 +58,9 @@
         android:layout_marginLeft="75dp"
         android:layout_marginRight="75dp"
         android:layout_marginBottom="197dp"
-        android:fontFamily="monospace"
+        android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
-        android:textSize="14pt" />
+        android:textSize="12pt" />
 
     <Button
         android:id="@+id/answer3"
@@ -70,9 +70,9 @@
         android:layout_marginLeft="75dp"
         android:layout_marginRight="75dp"
         android:layout_marginBottom="88dp"
-        android:fontFamily="monospace"
+        android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
-        android:textSize="14pt" />
+        android:textSize="12pt" />
 <!--
     <Button
         android:id="@+id/exitButton"

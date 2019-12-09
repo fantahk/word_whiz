@@ -202,7 +202,9 @@ public class GamePage extends AppCompatActivity {
                             try {
                                 JSONObject jsonObject1 = response.getJSONObject(0);
                                 defWord = jsonObject1.getString("text");
-
+                                if (defWord.contains("ural form of")) {
+                                    randomWordAPI();
+                                }
                                 if (defWord.contains("<em>")) {
                                     defWord = defWord.replace("<em>", "");
                                     defWord = defWord.replace("</em>", "");
@@ -212,9 +214,9 @@ public class GamePage extends AppCompatActivity {
                                     defWord = defWord.replace("</xref>", "");
                                 }
                                 if (defWord.contains("<internalXref urlencoded=")) {
-                                    defWord = defWord.replace("<internalXref urlencoded=>", "");
+                                    defWord = defWord.replace("<internalXref urlencoded=", "");
+                                    defWord = defWord.replace(defWord, "");
                                     defWord = defWord.replace("</internalXref>", "");
-                                    defWord = defWord.replace("<internalXref urlencoded=>", "");
                                 }
                                 definitions.add(0, defWord);
                                 setDefinition();

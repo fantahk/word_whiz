@@ -39,7 +39,7 @@ public class HomePage extends AppCompatActivity {
     private TextView definition;
     private Button start;
     private int highScore;
-    private int lastScore;
+    //private int lastScore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,22 +47,12 @@ public class HomePage extends AppCompatActivity {
         wordOfDay = findViewById(R.id.wordDefinition);
         definition = findViewById(R.id.definition);
         start = findViewById(R.id.start);
-        highScoreText = findViewById(R.id.highestScore);
+       // highScoreText = findViewById(R.id.highestScore);
         start.setOnClickListener(unused -> goToGame());
         wordAPI();
-        lastScore = GamePage.score;
-        if (lastScore >= highScore) {
-            setHighScore();
-        }
-        highScoreText.setText("High Score: " + String.valueOf(highScore));
+        //highScoreText.setText("High Score: " + GamePage.highScore);
 
     }
-
-    public void setHighScore() {
-        highScore = lastScore;
-    }
-
-
 
     public void wordAPI() {
         RequestQueue queue1 = Volley.newRequestQueue(this);

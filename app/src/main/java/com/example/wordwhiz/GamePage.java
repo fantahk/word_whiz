@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 
 import java.sql.SQLOutput;
@@ -73,6 +75,10 @@ public class GamePage extends AppCompatActivity {
      * word - string for random word using API.
      */
     private String word;
+    /**
+     * highScore - the highest score.
+     */
+    public static int highScore;
 
     private ArrayList<String> randomWords;
     /**
@@ -99,6 +105,7 @@ public class GamePage extends AppCompatActivity {
         definition = findViewById(R.id.definition);
         randomWords = new ArrayList<String>();
         definitions = new ArrayList<String>();
+        highScore = 0;
         // set background to gradient
         GradientDrawable gradient = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM,
                 new int[] {0xFF6a78a8, 0xFF3d455e});
@@ -122,16 +129,26 @@ public class GamePage extends AppCompatActivity {
         // random word variable = API request for random word
         //String correctWord = ;
         correctAnswer.setText(randomWords.remove(0)); // sets text of correct button to random word variable
+        //setHighScore();
         //setDefinition();
     }
-
     public void correctAnswerClicked() {
         // change button color to green later
-
+        Animation anim = new AlphaAnimation(Color.GREEN, 0xFFc1cfc0);
+        anim.setDuration(50); //You can manage the blinking time with this parameter
+        anim.setStartOffset(20);
+        anim.setRepeatMode(Animation.REVERSE);
+        anim.setRepeatCount(1);
+        correctAnswer.startAnimation(anim);
 
         // update score
         score++;
         currentScore.setText("Score: " + score);
+        /*
+        if (score > highScore) {
+            highScore = score;
+        }
+         */
         // make new button the correct one
         correctAnswer.setOnClickListener(unused -> wrongAnswerClicked());
         correctAnswer = answers[random.nextInt(4)];
@@ -155,6 +172,11 @@ public class GamePage extends AppCompatActivity {
                 startActivity(intent);
             }
         }
+        /*
+        if (score > highScore) {
+            highScore = score;
+        }
+         */
     }
 
     public void setWrongWord() {
@@ -180,6 +202,19 @@ public class GamePage extends AppCompatActivity {
                             try {
                                 JSONObject jsonObject1 = response.getJSONObject(0);
                                 defWord = jsonObject1.getString("text");
+                                if (defWord.contains("<em>")) {
+                                    defWord = defWord.replace("<em>", "");
+                                    defWord = defWord.replace("</em>", "");
+                                }
+                                if (defWord.contains("<xref")) {
+                                    defWord = defWord.replace("<xref>", "");
+                                    defWord = defWord.replace("</xref>", "");
+                                }
+                                if (defWord.contains("<internalXref urlencoded=")) {
+                                    defWord = defWord.replace("<internalXref urlencoded=>", "");
+                                    defWord = defWord.replace("</internalXref>", "");
+                                    defWord = defWord.replace("<internalXref urlencoded=>", "");
+                                }
                                 definitions.add(0, defWord);
                                 setDefinition();
                                 System.out.println("test array: " + definitions);

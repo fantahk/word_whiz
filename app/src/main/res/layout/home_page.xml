@@ -15,18 +15,6 @@
         android:textColor="#000000"
         android:textSize="13pt" />
 
-    <TextView
-        android:id="@+id/highestScore"
-        android:layout_width="match_parent"
-        android:layout_height="81dp"
-        android:layout_marginTop="220dp"
-        android:gravity="center"
-        android:text="High Score: "
-        android:fontFamily="monospace"
-        android:layout_marginRight="80dp"
-        android:textColor="#000000"
-        android:textSize="18pt" />
-
     <Button
         android:id="@+id/start"
         android:layout_width="match_parent"

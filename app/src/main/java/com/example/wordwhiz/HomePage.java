@@ -120,6 +120,12 @@ public class HomePage extends AppCompatActivity {
                                     wordAPI();
                                 }
 
+                                if (wordDefinition.contains("<internalXref urlencoded=")) {
+                                    wordDefinition = wordDefinition.replace("<internalXref urlencoded=", "");
+                                    wordDefinition = wordDefinition.replace(word, "");
+                                    wordDefinition = wordDefinition.replace("</internalXref>", "");
+                                }
+
 
                                 if (wordDefinition.contains("<em>")) {
                                     wordDefinition = wordDefinition.replace("<em>", "");

@@ -125,7 +125,6 @@ public class HomePage extends AppCompatActivity {
                                     wordDefinition = wordDefinition.replace("</xref>", "");
                                 }
 
-
                                 definition.setText("Definition: " + wordDefinition);
                             } catch (JSONException e) {
                                 definition.setText(e.getMessage());

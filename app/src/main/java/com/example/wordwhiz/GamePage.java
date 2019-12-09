@@ -188,7 +188,7 @@ public class GamePage extends AppCompatActivity {
     }
 
     public void setDefinition() {
-        definition.setText(definitions.remove(0));
+        definition.setText("Definition: " + definitions.remove(0));
     }
 
     public String definitionAPI(String word) {

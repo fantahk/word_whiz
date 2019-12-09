@@ -3,6 +3,7 @@ package com.example.wordwhiz;
 // import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -98,7 +99,11 @@ public class GamePage extends AppCompatActivity {
         definition = findViewById(R.id.definition);
         randomWords = new ArrayList<String>();
         definitions = new ArrayList<String>();
-
+        // set background to gradient
+        GradientDrawable gradient = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM,
+                new int[] {0xFF6a78a8, 0xFF3d455e});
+        gradient.setCornerRadius(0f);
+        gameLayout.setBackgroundDrawable(gradient);
         // not sure if 59-63 is right,, trying to figure out how to initialize game page for the first round
         currentScore.setText("Score: 0");
         randomWordAPI();

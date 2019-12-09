@@ -116,6 +116,11 @@ public class HomePage extends AppCompatActivity {
                                 JSONObject jsonObject = response.getJSONObject(0);
                                 wordDefinition = jsonObject.getString("text");
 
+                                if (wordDefinition.contains("ural form of")) {
+                                    wordAPI();
+                                }
+
+
                                 if (wordDefinition.contains("<em>")) {
                                     wordDefinition = wordDefinition.replace("<em>", "");
                                     wordDefinition = wordDefinition.replace("</em>", "");

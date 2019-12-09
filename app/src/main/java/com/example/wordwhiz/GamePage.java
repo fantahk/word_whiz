@@ -202,6 +202,7 @@ public class GamePage extends AppCompatActivity {
                             try {
                                 JSONObject jsonObject1 = response.getJSONObject(0);
                                 defWord = jsonObject1.getString("text");
+
                                 if (defWord.contains("<em>")) {
                                     defWord = defWord.replace("<em>", "");
                                     defWord = defWord.replace("</em>", "");

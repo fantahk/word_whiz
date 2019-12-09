@@ -34,9 +34,12 @@ public class HomePage extends AppCompatActivity {
     private String word;
     private ArrayList<String> randomWords;
     private String wordDefinition;
+    private TextView highScoreText;
     private TextView wordOfDay;
     private TextView definition;
     private Button start;
+    private int highScore = 0;
+    private int lastScore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +47,19 @@ public class HomePage extends AppCompatActivity {
         wordOfDay = findViewById(R.id.wordDefinition);
         definition = findViewById(R.id.definition);
         start = findViewById(R.id.start);
+        highScoreText = findViewById(R.id.highestScore);
         start.setOnClickListener(unused -> goToGame());
         wordAPI();
+        setHighScore();
+        highScoreText.setText("High Score: " + String.valueOf(highScore));
+
+    }
+
+    public void setHighScore() {
+        lastScore = GamePage.score;
+        if (lastScore >= highScore) {
+            highScore = lastScore;
+        }
     }
 
 

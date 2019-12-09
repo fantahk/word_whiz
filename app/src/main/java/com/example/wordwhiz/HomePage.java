@@ -107,12 +107,17 @@ public class HomePage extends AppCompatActivity {
                             try {
                                 JSONObject jsonObject = response.getJSONObject(0);
                                 wordDefinition = jsonObject.getString("text");
-                                /*
-                                if (wordDefinition.contains("<em>")) {
 
+                                if (wordDefinition.contains("<em>")) {
+                                    wordDefinition = wordDefinition.replace("<em>", "");
+                                    wordDefinition = wordDefinition.replace("</em>", "");
+                                }
+                                if (wordDefinition.contains("<xref>")) {
+                                    wordDefinition = wordDefinition.replace("<xref>", "");
+                                    wordDefinition = wordDefinition.replace("</xref>", "");
                                 }
 
-                                 */
+
                                 definition.setText("Definition: " + wordDefinition);
                             } catch (JSONException e) {
                                 definition.setText(e.getMessage());

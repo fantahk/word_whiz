@@ -214,9 +214,7 @@ public class GamePage extends AppCompatActivity {
                                     defWord = defWord.replace("</xref>", "");
                                 }
                                 if (defWord.contains("<internalXref urlencoded=")) {
-                                    defWord = defWord.replace("<internalXref urlencoded=", "");
-                                    defWord = defWord.replace(defWord, "");
-                                    defWord = defWord.replace("</internalXref>", "");
+                                   randomWordAPI();
                                 }
                                 definitions.add(0, defWord);
                                 setDefinition();

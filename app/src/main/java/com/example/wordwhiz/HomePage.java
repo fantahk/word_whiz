@@ -51,14 +51,23 @@ public class HomePage extends AppCompatActivity {
      * start - button that takes the user to GamePage
      */
     private Button start;
+    private int lastScore;
+    private static int highScore;
+    private TextView highScoreText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
         wordOfDay = findViewById(R.id.wordDefinition);
         definition = findViewById(R.id.definition);
+        highScoreText = findViewById(R.id.highScore);
         start = findViewById(R.id.start);
         start.setOnClickListener(unused -> goToGame());
+        lastScore = GamePage.score;
+        if (lastScore > highScore) {
+            highScore = lastScore;
+        }
+        highScoreText.setText("High Score: " + String.valueOf(highScore));
         wordAPI();
     }
 

@@ -8,12 +8,21 @@
     <TextView
         android:id="@+id/rules"
         android:layout_width="match_parent"
-        android:layout_height="279dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="-1dp"
+        android:layout_height="212dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
         android:text="@string/rules_choose_the_word_that_you_think_belongs_to_the_given_definition_and_rack_up_points"
+        android:textColor="#FFFFFF"
+        android:textSize="13pt" />
+
+    <TextView
+        android:id="@+id/highScore"
+        android:layout_width="277dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="TextView"
         android:textColor="#FFFFFF"
         android:textSize="13pt" />
 
